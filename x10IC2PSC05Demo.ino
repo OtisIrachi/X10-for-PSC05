@@ -17,7 +17,7 @@
 //**************************************************************************
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C LCD(0x27,16,2);    // Blue LCD
+LiquidCrystal_I2C LCD(0x27, 16, 2);    // Blue LCD
 
 #include <X10RCI.h>   // X10 Library,  See X10.cpp and X10.h
 //****************************************************************************
@@ -54,7 +54,7 @@ char row, col;
 char count, slot;
 
 //**************************************************************************
-void Soft_I2C_LCD_Outn(char row, char col, const char s[])
+void Soft_I2C_LCD_Out(char row, char col, const char s[])
 {
   unsigned char i;
   col = col - 1;
@@ -174,18 +174,18 @@ void loop()
            
         if (unit_codes == 20)
            {                      //1234567890123456
-           Soft_I2C_LCD_Outn(1, 1, "x10 Monitor     ");
+           Soft_I2C_LCD_Out(1, 1, "x10 Monitor     ");
            Soft_I2C_LCD_Chr(2, 1, house_codes);    // Display House Code
            BytetoStr(2, 4, tmp); 
-           Soft_I2C_LCD_Outn(2, 7, "ON ");
+           Soft_I2C_LCD_Out(2, 7, "ON ");
            }
 
         if (unit_codes == 28)
            {
-           Soft_I2C_LCD_Outn(1, 1, "x10 Monitor     ");
+           Soft_I2C_LCD_Out(1, 1, "x10 Monitor     ");
            Soft_I2C_LCD_Chr(2, 1, house_codes);    // Display House Code
            BytetoStr(2, 4, tmp);               
-           Soft_I2C_LCD_Outn(2, 7, "OFF");
+           Soft_I2C_LCD_Out(2, 7, "OFF");
            }
 
         }// End While
