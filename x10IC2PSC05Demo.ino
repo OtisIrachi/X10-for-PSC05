@@ -8,7 +8,12 @@
 //  by RCI
 //
 //  Requires X10RCI.cpp and X10RCI.h Library Files
-
+//
+//           UNO Pin          PSC05        Phone Cable
+//              8              1(ZC)          Black
+//              9              4(TRANS)       Yellow
+//              10             3(RCV)         Green
+//              GND            2              Red
 //**************************************************************************
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
